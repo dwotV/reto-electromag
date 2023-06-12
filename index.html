@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Pagina web basica</title>
+
+</head>
+
+<body>
+    <div class="head">
+
+        <div class="logo">
+            <a href="#">Rush</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="#inicio">Inicio</a>
+            <a href="#atracciones">Atracciones</a>
+            <a href="#nuevo">Nuevo</a>
+            <a href="#boleto">Boleto</a>
+            <a href="#us">Contacto</a>
+        </nav>
+
+    </div>
+
+    <header class="content header" id="inicio">
+        <h2 class="title2">Bienvenido</h2>
+        <h2 class="bo">
+            ¡Bienvenido a Rush! 
+            Un lugar donde la diversión y la aventura se fusionan para crear momentos inolvidables.
+        </h2>
+
+        <div class="btn-home">
+            <a href="https://www.sixflags.com.mx/mexico/store/tickets" class="btn">Boletos</a>
+            <a href="https://www.sixflags.com.mx/mexico/events" class="btn">Eventos</a>
+        </div>
+    </header>
+
+    <section class="content sau" id="atracciones">
+
+        <h2 class="title">Atracciones</h2>
+        <p>¡Descubre nuestras atracciones únicas!</p>
+        
+        <style>
+            .img-rounded {
+              border-radius: 5%;
+            }
+            </style>
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>RUSHER</h3>
+                <img class="img-rounded" src="r.jpg" width="250" height="200">
+                <a href="#torre" class="btn">Saber más</a>
+            </div>
+            <div class="box">
+                <h3>SPIN CRUSH</h3>
+                <img class="img-rounded" src="sc.jpg" width="250" height="200">
+                <a href="#torre" class="btn">Saber más</a>
+            </div>
+            <div class="box">
+                <h3>FLEWN</h3>
+                <img class="img-rounded" src="costos.jpg" width="250" height="200">
+                <a href="#torre" class="btn">Saber más</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="content about" id="nuevo">
+
+        <h2 class="title">Novedades del parque</h2>
+        <p>Conoce todas las nuevas atracciones de RUSH</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/muJHWtAM9Ns" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; 
+        autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <a href="#torre" class="btn">Saber más</a>
+
+    </section>
+
+    <section class="content sau" id="torre">
+
+        <h2 class="title">¡Kosmik!</h2>
+        <p>Nuestra nueva atracción "Kosmik", la más alta del mundo:</p>
+        <img src="gondola.gif" width="650" height="425">
+        <div class="box-container">
+
+        
+
+        </div>
+
+    </section>
+
+    <section class="content data" id="datos">
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Velocidad</h3>
+            </div>
+            <div class="box">
+                <h3>Altura</h3>
+            </div>
+            <div class="box">
+                <h3>Fuerza</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content price" id="boleto">
+
+        <article class="contain">
+            <h2 class="title2">Escanea tu boleto</h2>
+            <video id="video" width="70%" height="auto"></video>
+            <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+            <script>
+                // Verificar si el navegador admite getUserMedia y si es necesario usar HTTPS para acceder a la cámara
+                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                    // Obtener el elemento de video y el contenedor para mostrar el código QR
+                    var video = document.getElementById('video');
+                    var qrContainer = document.createElement('div');
+                    document.body.appendChild(qrContainer);
+    
+                    // Crear un nuevo escáner Instascan
+                    var scanner = new Instascan.Scanner({ video: video });
+    
+                    // Listener para capturar el escaneo del código QR
+                    scanner.addListener('scan', function (content) {
+                    // Extraer la URL del contenido escaneado y redirigir
+                        window.location.href = content;
+                    });
+    
+                    // Obtener las cámaras disponibles y comenzar a escanear
+                    Instascan.Camera.getCameras().then(function (cameras) {
+                        if (cameras.length > 0) {
+                            scanner.start(cameras[0]);
+                        } else {
+                            console.error('No se encontró ninguna cámara en el dispositivo.');
+                        }
+                    }).catch(function (error) {
+                        console.error(error);
+                    });
+                } else {
+                    console.error('El navegador no admite la API getUserMedia para acceder a la cámara.');
+            }
+            </script>
+
+        </article>
+
+    </section>
+
+    <section class="content contact" id="us">
+        <h2 class="title2">Contacto</h2>
+        <p class="text">Correo: rush@park.com</p>
+        <figure class="map">
+            <img src="img/mapa.png" height="220px" width="100%" alt="mapa">
+        </figure>
+    </section>
+    
+</body>
+</html>
