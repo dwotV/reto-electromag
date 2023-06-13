@@ -208,13 +208,53 @@ p {
     text-align: center;
 }
 
+.box-container .caja{
+    height: 15rem;
+    width: 19rem;
+    transition: all .2s;
+    background: #fff;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .2rem 4rem rgba(0, 0 , 0, .5);
+    margin: 2rem;   
+}
+
+.box-container .caja i {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #A72608;
+    font-size: 2rem;
+    margin: 1rem 0;
+
+} 
+
+.box-container .caja h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #F26419;
+
+}
+
+.box-container .caja:hover{
+    transform: scale(1.02);
+}
+
+
+.box-container .caja p {
+    padding: 0 15px;
+    font-size: 16px;
+}
 
 .contact {
     padding-top: 100px;
     background: #171717;
     padding-bottom: 100px;
 }
-
 
 @media (max-width: 998px) {
 
